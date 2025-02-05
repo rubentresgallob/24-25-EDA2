@@ -1,0 +1,34 @@
+@startuml
+
+class Pixel {
+    - int x
+    - int y
+    - char color
+    + Pixel(int x, int y, char color)
+    + setColor(char color): void
+    + getColor(): char
+}
+
+class Frame {
+    - int altura
+    - int anchura
+    - Pixel[][] pixeles
+    + Frame(int anchura, int altura)
+    + setPixel(int x, int y, char color): void
+    + renderizar(): void
+}
+
+class Interfaz {
+    - Frame frame1
+    - Frame frame2
+    - int frameActual
+    + Interfaz(Frame frame1, Frame frame2)
+    + cambiarFrame(): void
+    + actualizarPantalla(): void
+    + combinarFrames(): char[][]
+}
+
+Interfaz --> Frame : Usa
+Frame --> Pixel : Contiene
+
+@enduml
