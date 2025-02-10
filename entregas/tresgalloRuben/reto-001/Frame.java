@@ -1,15 +1,17 @@
 public class Frame {
-    private int altura, anchura;
+    private int altura;
+    private int anchura;
     private Pixel[][] pixeles;
 
-    public Frame(int anchura, int altura) {
-        this.anchura = anchura;
+    public Frame(int altura, int anchura) {
         this.altura = altura;
+        this.anchura = anchura;
         this.pixeles = new Pixel[altura][anchura];
 
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < anchura; j++) {
-                pixeles[i][j] = new Pixel(j, i, ' '); // Espacio vacío por defecto
+  
+        for (int y = 0; y < altura; y++) {
+            for (int x = 0; x < anchura; x++) {
+                pixeles[y][x] = new Pixel(x, y, ' ');
             }
         }
     }
@@ -20,16 +22,28 @@ public class Frame {
         }
     }
 
-    public Pixel[][] getPixeles() {
-        return pixeles;
+    public char getPixelColor(int x, int y) {
+        if (x >= 0 && x < anchura && y >= 0 && y < altura) {
+            return pixeles[y][x].getColor();
+        }
+        return ' ';
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public int getAnchura() {
+        return anchura;
     }
 
     public void renderizar() {
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < anchura; j++) {
-                System.out.print(pixeles[i][j].getColor() + " ");
+        for (int y = 0; y < altura; y++) {
+            for (int x = 0; x < anchura; x++) {
+                System.out.print(getPixelColor(x, y) + " - ");
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

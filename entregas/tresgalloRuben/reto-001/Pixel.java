@@ -1,5 +1,6 @@
 public class Pixel {
-    private int x, y;
+    private int x;
+    private int y;
     private char color;
 
     public Pixel(int x, int y, char color) {
@@ -8,11 +9,11 @@ public class Pixel {
         this.color = color;
     }
 
-    public void setColor(char color) {
-        this.color = color;
-    }
-
     public char getColor() {
         return color;
+    }
+
+    public void setColor(char color) {
+        this.color = color;
     }
 }
