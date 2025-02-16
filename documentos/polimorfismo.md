@@ -83,36 +83,25 @@ Esta dualidad es especialmente relevante cuando trabajamos con clases abstractas
 
 El polimorfismo se construye sobre el sistema de referencias de Java: este es el fundamento técnico que hace posible el polimorfismo:
 
-<div align=center>
-
-<table>
-<tr>
-<td>
-
 ```java
-
 Animal miAnimal = new Gato("Felix");
 
 ```
-</td>
-<td>
+
+<div align=center>
 
 |||
 |:-:|-|
 |`Animal miAnimal`|Declara una variable que puede guardar una referencia a *algo que sea Animal*.|
 |`new Gato("Felix")`|Crea un objeto Gato en memoria.|
 |`=`|Hace que la variable guarde la referencia al objeto Gato.|
-</td>
-</tr>
-</table>
+
 
 </div>
-
 
 ### Jerarquía de tipos
 
 Para que el polimorfismo funcione, necesitamos establecer relaciones entre tipos, relaciones de herencia. En Java, esto se puede hacer de dos formas que, aunque sintácticamente diferentes, establecen la misma relación:
-
 
 <div align=center>
 
