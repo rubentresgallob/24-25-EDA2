@@ -59,7 +59,13 @@ Esto implica dos aspectos fundamentales:
 Consideremos este ejemplo:
 
 ```java
+Animal animal;
+animal = new Gato();     // OK
+animal = new Perro();    // OK
 
+Gato gato;
+gato = new Gato();       // OK
+gato = new Perro();      // ERROR!!! Perro no es un Gato
 ```
 
 Este código ilustra dos principios fundamentales:
