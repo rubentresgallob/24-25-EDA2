@@ -199,3 +199,12 @@ Es importante notar que el uso de `instanceof` generalmente indica un problema e
 1. Intentando acceder a comportamiento específico que debería estar encapsulado de otra manera.
 
 En lugar de usar `instanceof`, deberíamos repensar nuestro diseño para aprovechar mejor el polimorfismo y la encapsulación.
+
+### Casos de uso
+
+A continuación, ejemplos que sirvan como introducción y guía.
+
+- [Un sistema de notificaciones](polimorfismoCdU-sistemaNotificaciones.md)
+- [Formas geométricas](polimorfismoCdU-formasGeometricas.md)
+- [Procesamiento de pagos](polimorfismoCdU-procesamientoPagos.md)
+
