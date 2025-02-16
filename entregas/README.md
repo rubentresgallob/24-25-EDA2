@@ -7,6 +7,8 @@ Cada reto o sesion debe ir en su correspondiente carpeta nombrada como *reto00x*
 - /entregas/masiasManuel/reto001
 - /entregas/masiasManuel/sesion0204
 
+Los retos han de empezarse en una rama que sea hija de la rama entregas.
+
 Los PR deben ser sólo de lo trabajado en dichas sesiones y se entregarán a la rama correspondiente.
 
 No se corregirá si no se cumplen esas pautas.
