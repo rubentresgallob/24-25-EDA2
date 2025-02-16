@@ -51,7 +51,7 @@ El polimorfismo es una **relajación del sistema de tipos**, de tal manera que u
 
 Esto implica dos aspectos fundamentales:
 
-- Exije la existencia de una jerarquía de clacificación mediante relaciones de herencia.
+- Exije la existencia de una jerarquía de clasificación mediante relaciones de herencia.
 - Pero las jerarquías de clasificación NO exigen tratamientos polimòrficos.
 
 ### Naturaleza dual de objetos y referencias
