@@ -10,10 +10,6 @@ public class Main {
         instrumento1.tocar(); 
         instrumento2.tocar(); 
         instrumento3.tocar(); 
- 
-        if (instrumento1 instanceof Guitarra) {
-            ((Guitarra) instrumento1).afinar(); 
-        }
         
         InstrumentoMusical[] orquesta = new Guitarra[3]; 
         orquesta[0] = new Guitarra("Ibanez"); 

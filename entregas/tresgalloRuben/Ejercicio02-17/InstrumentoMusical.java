@@ -8,12 +8,8 @@ abstract class InstrumentoMusical {
     }
     
     public abstract void tocar();
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        InstrumentoMusical instrumento = (InstrumentoMusical) obj;
-        return nombre.equals(instrumento.nombre);
+
+    public void afinar() {
+        System.out.println(nombre + " no necesita afinación específica.");
     }
 }

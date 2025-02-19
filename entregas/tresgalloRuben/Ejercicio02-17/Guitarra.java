@@ -10,7 +10,4 @@ class Guitarra extends InstrumentoMusical {
         System.out.println("La guitarra " + nombre + " está sonando con acordes.");
     }
     
-    public void afinar() {
-        System.out.println("Afinando la guitarra...");
-    }
 }
