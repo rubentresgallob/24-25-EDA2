@@ -1,51 +1,33 @@
 package Nivel3;
 
-import java.util.PriorityQueue;
-
-public class CombinacionArrays {
-    static class Elemento implements Comparable<Elemento> {
-        int valor;
-        int arrayIndex;
-        int elementIndex;
-
-        Elemento(int valor, int arrayIndex, int elementIndex) {
-            this.valor = valor;
-            this.arrayIndex = arrayIndex;
-            this.elementIndex = elementIndex;
-        }
-
-        public int compareTo(Elemento otro) {
-            return this.valor - otro.valor;
-        }
-    }
-
+class CombinacionArrays {
     public static int[] combinarArrays(int[][] arrays) {
-        PriorityQueue<Elemento> minHeap = new PriorityQueue<>();
         int totalElementos = 0;
-
-        for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i].length > 0) {
-                minHeap.offer(new Elemento(arrays[i][0], i, 0));
-                totalElementos += arrays[i].length;
-            }
+        for (int[] array : arrays) {
+            totalElementos += array.length;
         }
-
+        
         int[] resultado = new int[totalElementos];
-        int index = 0;
-
-        while (!minHeap.isEmpty()) {
-            Elemento elementoActual = minHeap.poll();
-            resultado[index++] = elementoActual.valor;
-
-            int siguienteIndex = elementoActual.elementIndex + 1;
-            if (siguienteIndex < arrays[elementoActual.arrayIndex].length) {
-                minHeap.offer(new Elemento(arrays[elementoActual.arrayIndex][siguienteIndex], elementoActual.arrayIndex, siguienteIndex));
+        int[] indices = new int[arrays.length]; 
+        
+        for (int i = 0; i < totalElementos; i++) {
+            int minValor = Integer.MAX_VALUE;
+            int minArray = -1;
+            
+            for (int j = 0; j < arrays.length; j++) {
+                if (indices[j] < arrays[j].length && arrays[j][indices[j]] < minValor) {
+                    minValor = arrays[j][indices[j]];
+                    minArray = j;
+                }
             }
+            
+            resultado[i] = minValor;
+            indices[minArray]++;
         }
-
+        
         return resultado;
     }
-
+    
     public static void main(String[] args) {
         int[][] arrays = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
         int[] resultado = combinarArrays(arrays);
@@ -54,4 +36,3 @@ public class CombinacionArrays {
         }
     }
 }
-

@@ -1,23 +1,19 @@
 package Nivel3;
 
-import java.util.PriorityQueue;
-
 public class CasiOrdenado {
     public static void ordenarCasiOrdenado(int[] numeros, int k) {
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for (int i = 0; i < numeros.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j <= Math.min(i + k, numeros.length - 1); j++) {
+                if (numeros[j] < numeros[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            
 
-        for (int i = 0; i <= k && i < numeros.length; i++) {
-            minHeap.offer(numeros[i]);
-        }
-
-        int index = 0;
-        for (int i = k + 1; i < numeros.length; i++) {
-            numeros[index++] = minHeap.poll();
-            minHeap.offer(numeros[i]);
-        }
-
-        while (!minHeap.isEmpty()) {
-            numeros[index++] = minHeap.poll();
+            int temp = numeros[i];
+            numeros[i] = numeros[minIndex];
+            numeros[minIndex] = temp;
         }
     }
 

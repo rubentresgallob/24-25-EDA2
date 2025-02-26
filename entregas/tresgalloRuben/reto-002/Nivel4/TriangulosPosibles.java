@@ -1,28 +1,18 @@
-package Nivel4;
-import java.util.ArrayList;
-import java.util.List;
-
-public class TriangulosPosibles {
-    public static List<int[]> encontrarTodosTriangulos(int[] numeros) {
-        List<int[]> triangulos = new ArrayList<>();
-        int n = numeros.length;
-        for (int i = 0; i < n - 2; i++) {
-            for (int j = i + 1; j < n - 1; j++) {
-                for (int k = j + 1; k < n; k++) {
-                    if (numeros[i] + numeros[j] > numeros[k] && numeros[i] + numeros[k] > numeros[j] && numeros[j] + numeros[k] > numeros[i]) {
-                        triangulos.add(new int[] {numeros[i], numeros[j], numeros[k]});
+class Triangulos {
+    public static boolean existeTriangulo(int[] arr) {
+        for (int i = 0; i < arr.length - 2; i++) {
+            for (int j = i + 1; j < arr.length - 1; j++) {
+                for (int k = j + 1; k < arr.length; k++) {
+                    if (arr[i] + arr[j] > arr[k] && arr[i] + arr[k] > arr[j] && arr[j] + arr[k] > arr[i]) {
+                        return true;
                     }
                 }
             }
         }
-        return triangulos;
+        return false;
     }
-
     public static void main(String[] args) {
-        int[] numeros = {3, 4, 5, 6, 7};
-        List<int[]> triangulos = encontrarTodosTriangulos(numeros);
-        for (int[] triangulo : triangulos) {
-            System.out.println("Triángulo: " + triangulo[0] + ", " + triangulo[1] + ", " + triangulo[2]);
-        }
+        int[] arr = {3, 4, 5, 6, 7};
+        System.out.println("¿Existe un triángulo? " + existeTriangulo(arr));
     }
 }
