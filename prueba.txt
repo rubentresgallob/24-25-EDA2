@@ -1,0 +1,7 @@
+total 132
+drwxrwxr-x 2 manuel manuel   4096 mar 12 13:06 documentos
+-rw-rw-r-- 1 manuel manuel 116228 feb  5 12:44 EDA2-2025-02-03-10-02.pdf
+drwxrwxr-x 2 manuel manuel   4096 mar 12 13:06 ejercicios
+-rw-rw-r-- 1 manuel manuel      0 mar 12 13:13 prueba.txt
+-rw-rw-r-- 1 manuel manuel    125 mar 12 13:06 README.md
+drwxrwxr-x 2 manuel manuel   4096 mar 12 13:06 retos
